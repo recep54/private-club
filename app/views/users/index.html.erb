@@ -1,0 +1,9 @@
+<h1>Bienvenu</h1>
+
+<p>
+<% @user.each do |use|%>
+  <p><%= use.first_name %></br>
+    <%= use.last_name %></br>
+    <%= use.email %></p>
+<% end %>
+</p>

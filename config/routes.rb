@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get	 '/club',    to: 'static_pages#club'
+  get 'index', to: 'users#index'
   resources :users
   root 'static_pages#index'
 end

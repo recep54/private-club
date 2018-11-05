@@ -9,12 +9,9 @@
 
       <% if logged_in? %>
         <li class="nav-item active"><%= link_to "Club", club_path, :class => "nav-link"%></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilisateur</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li class="dropdown-item"><%= link_to "Profil", current_user, :class => "dropdown-item"%></li>
-              <li class="dropdown-item"><%= link_to "Déconnexion", logout_path, method: :delete, :class => "dropdown-item"%></li>
-            </ul>
+        <li class="dropdown-item"><%= link_to "Profil", current_user, :class => "dropdown-item"%></li>
+        <li class="dropdown-item"><%= link_to "Déconnexion", logout_path, method: :delete, :class => "dropdown-item"%></li>
+        
         </li>
 
         <% else %>
