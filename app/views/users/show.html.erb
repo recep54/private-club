@@ -1,0 +1,6 @@
+<% if logged_in? %>
+<h1>Profil</h1>
+	<h3>Prénom : <%= @current_user.first_name %></h3>
+	<h3>Nom : <%= @current_user.last_name %></h3>
+	<h3>Email : <%= @current_user.email %></h3>
+<% end %>
