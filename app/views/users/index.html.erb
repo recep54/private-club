@@ -1,4 +1,7 @@
-<h1>Bienvenu</h1>
+<% if logged_in? %>
+
+  <h1>binevenu</h1>
+
 
 <p>
 <% @user.each do |use|%>
@@ -7,3 +10,10 @@
     <%= use.email %></p>
 <% end %>
 </p>
+
+
+<% else %>
+  You need to be logged in to access this content. <br><br>
+  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>     <%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
+
+<% end %>
