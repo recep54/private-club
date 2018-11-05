@@ -9,14 +9,14 @@
 
       <% if logged_in? %>
         <li class="nav-item active"><%= link_to "Club", club_path, :class => "nav-link"%></li>
-        <li class="dropdown-item"><%= link_to "Profil", current_user, :class => "dropdown-item"%></li>
-        <li class="dropdown-item"><%= link_to "Déconnexion", logout_path, method: :delete, :class => "dropdown-item"%></li>
+        <li class="nav-item active"><%= link_to "Profil", current_user, :class => "nav-link"%></li>
+        <li class="nav-item active"><%= link_to "Log out", logout_path, method: :delete, :class => "nav-link"%></li>
         
         </li>
 
         <% else %>
-          <li class="nav-item active"><%= link_to "Connexion", login_path, :class => "nav-link"%></li>
-          <li class="nav-item active"><%= link_to "Inscription", signup_path, :class => "nav-link"%></li>
+          <li class="nav-item active"><%= link_to "Log in", login_path, :class => "nav-link"%></li>
+          <li class="nav-item active"><%= link_to "Sign up", signup_path, :class => "nav-link"%></li>
 
       <% end %>
 

@@ -1,12 +1,12 @@
 <h1>Private Club</h1>
 
 <% if logged_in? %>
-	<h2>Bonjour <%= @current_user.first_name %> !</h2>
+	<h2>Hello <%= @current_user.first_name %> !</h2>
 	<br>
-	<%= link_to "Page du club", club_path, class: "btn btn-primary" %>
+	<%= link_to "Club page", club_path, class: "btn btn-primary" %>
 <% else %>
-	<h2>Bonjour, veuillez vous connecter</h2>
+	<h2>Hello, please log in</h2>
 	<br>
-	<%= link_to "Connexion", login_path, class: "btn btn-primary" %>
-	<%= link_to "S'incrire", signup_path, class: "btn btn-primary" %>
+	<%= link_to "Log in", login_path, class: "btn btn-primary" %>
+	<%= link_to "Sign up", signup_path, class: "btn btn-primary" %>
 <% end %>
