@@ -1,19 +1,26 @@
 <% if logged_in? %>
+	
+	<h1>Members of the club</h1><br>
 
-  <h1>Welcome</h1>
-
-
-<p>
-<% @user.each do |use|%>
-  <p><%= use.first_name %></br>
-    <%= use.last_name %></br>
-    <%= use.email %></p>
-<% end %>
-</p>
-
+	<table style="width:100%">
+		<tr>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Email</th>
+		</tr>
+		<% @user.each_with_index do |f|%>
+			<tr>
+				<td><%= f.first_name %></td>
+				<td><%= f.last_name %></td>
+				<td><%= f.email %></td>
+			</tr>
+		<% end %>
+	</table>
 
 <% else %>
-  You need to be logged in to access this content. <br><br>
-  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>     <%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
+	
+	You need to be logged in to access this content. <br><br>
+	<%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>     
+	<%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
 
 <% end %>

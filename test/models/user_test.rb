@@ -9,7 +9,7 @@ class UserTest < ActiveSupport::TestCase
     @user.first_name = "     "
     assert_not @user.valid?
   end
-
+ 
   test "last_name should be present" do
     @user.last_name = "     "
     assert_not @user.valid?
@@ -29,5 +29,5 @@ class UserTest < ActiveSupport::TestCase
     duplicate_user = @user.dup
     @user.save
     assert_not duplicate_user.valid?
-end
+  end
 end

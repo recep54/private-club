@@ -1,6 +1,18 @@
 <% if logged_in? %>
-<h1>Profil</h1>
-	<h3>Prénom : <%= @current_user.first_name %></h3>
-	<h3>Nom : <%= @current_user.last_name %></h3>
-	<h3>Email : <%= @current_user.email %></h3>
+
+	<h1>Profile</h1><br>
+
+	<p>
+		First name: <%= @current_user.first_name %><br>
+		Last name: <%= @current_user.last_name %><br>
+		Email: <%= @current_user.email %><br><br>
+		<%= link_to 'Edit your profile', edit_user_path(@user) %>
+	</p>
+
+<% else %>
+
+	You need to be logged in to access this content. <br><br>
+	<%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>     
+	<%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
+
 <% end %>
